@@ -13,15 +13,13 @@ public class Test {
 
         byte[] fileContent = Files.readAllBytes(file.toPath());
         InputStream is = new ByteArrayInputStream(fileContent);
-        CallEventRecord personnelRecord_decoded = new CallEventRecord();
+        CallEventRecord cer = new CallEventRecord();
 
         int i =0;
         while (i != -1) {
-
-            i =personnelRecord_decoded.decode(is);
-
-            System.out.println("\nDecoded structure:");
-            System.out.println(personnelRecord_decoded);
+            i =cer.decode(is);
+            System.out.println("\nDecoded record:");
+            System.out.println(cer);
         }
 
 
