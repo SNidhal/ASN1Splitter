@@ -15,9 +15,9 @@ public class Test {
         InputStream is = new ByteArrayInputStream(fileContent);
         CallEventRecord cer = new CallEventRecord();
 
-        int i =0;
-        while (i != -1) {
-            i =cer.decode(is);
+
+        while (is.available() != 0) {
+            cer.decode(is);
             System.out.println("\nDecoded record:");
             System.out.println(cer);
         }
